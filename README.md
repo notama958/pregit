@@ -34,7 +34,7 @@
     python3 main/pregit.python log  # show log
     python3 main/pregit.python log --oneline  # show log in oneline each
 ```
-### 5.Checkout
+### 5. Checkout
 > checkout at commit
 ```python
     python3 main/pregit.python commit --help # show help
