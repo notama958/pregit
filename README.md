@@ -9,37 +9,37 @@
 ### 1. Init
 > Create .pregit/ directory
 ```python
-    python3 main/pregit.python init --help # show help
-    python3 main/pregit.python init --path . # create .pregit/ at the current directory
-    python3 main/pregit.python init -p <your_path> # create .pregit/ at the current directory
+    python3 main/pregit.py init --help # show help
+    python3 main/pregit.py init --path . # create .pregit/ at the current directory
+    python3 main/pregit.py init -p <your_path> # create .pregit/ at the current directory
 ```
 ### 2. Add
 > create blob files and save to .pregit/objects/<first_2_hashed_character>/<the_last_38_characters>
 ```python
-    python3 main/pregit.python add --help # show help
-    python3 main/pregit.python add --file . # add all files in the directory t
-    python3 main/pregit.python add -f <file_1> <file_2> <file_3> # add several files to staging
+    python3 main/pregit.py add --help # show help
+    python3 main/pregit.py add --file . # add all files in the directory t
+    python3 main/pregit.py add -f <file_1> <file_2> <file_3> # add several files to staging
 ```
 ### 3. Commit
 > create tree + commit files and save to .pregit/objects/<first_2_hashed_character>/<the_last_38_characters>
 ```python
-    python3 main/pregit.python commit --help # show help
-    python3 main/pregit.python commit --message <your_msg>  # create commit with message
-    python3 main/pregit.python commit -m  <your_msg> # create commit with message
+    python3 main/pregit.py commit --help # show help
+    python3 main/pregit.py commit --message <your_msg>  # create commit with message
+    python3 main/pregit.py commit -m  <your_msg> # create commit with message
 ```
 ### 4. Log
 > Show commit log
 ```python
-    python3 main/pregit.python log --help # show help
-    python3 main/pregit.python log  # show log
-    python3 main/pregit.python log --oneline  # show log in oneline each
+    python3 main/pregit.py log --help # show help
+    python3 main/pregit.py log  # show log
+    python3 main/pregit.py log --oneline  # show log in oneline each
 ```
 ### 5. Checkout
 > checkout at commit
 ```python
-    python3 main/pregit.python commit --help # show help
-    python3 main/pregit.python commit --sha1 <commit>  # checkout at commit
-    python3 main/pregit.python commit --branch <branch> # checkout at branch ( at latest commit )
+    python3 main/pregit.py commit --help # show help
+    python3 main/pregit.py commit --sha1 <commit>  # checkout at commit
+    python3 main/pregit.py commit --branch <branch> # checkout at branch ( at latest commit )
 ```
 
 ### Example
@@ -66,7 +66,7 @@
     main/pregit.py add -f  index2.js # add index.js to .pregit/index
     # when we check the .pregit/objects/ we will see 1 blob file
     main/pregit.py commit -m  'add index2.js' # # create tree file and commit file
-    # in total at this stage we have 3 files
+    # in total at this stage we have 6 files
 ```
 > log
 ```python
@@ -127,9 +127,12 @@
     # 906a42 - add index.js
     cat index.js
     # hello
+    
     # checkout master
     main/pregit.py checkout -b master
+    
     # check log
+    main/pregit.py log --oneline
     # ba06f7 - modify index.js
 
     # fa27fe - add index2.js
